@@ -169,7 +169,7 @@ return [
      *   breathing room to complete logging or error handling.
      */
     'Error' => [
-        'errorLevel' => E_ALL,
+        'errorLevel' => E_ALL & ~E_USER_DEPRECATED,
         'exceptionRenderer' => 'Cake\Error\ExceptionRenderer',
         'skipLog' => [],
         'log' => true,
@@ -197,7 +197,7 @@ return [
      */
     'EmailTransport' => [
         'default' => [
-            'className' => 'Cake\Mailer\Transport\MailTransport',
+            'className' => 'Debug',//'Cake\Mailer\Transport\MailTransport',
             /*
              * The following keys are used in SMTP transports:
              */

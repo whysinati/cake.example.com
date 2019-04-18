@@ -102,3 +102,9 @@ Router::scope('/', function (RouteBuilder $routes) {
  * });
  * ```
  */
+
+Router::scope('/users',['plugin' => 'CakeDC/Users'], function($routes){
+    $routes->connect('/',['controller' => 'Users']);
+    $routes->connect('/:action/*',['controller' => 'Users']);
+    $routes->fallbacks(DashedRoute::class);
+}); //this reduced the users/users/ to just users/ in the abstraction layer(URL you see)
